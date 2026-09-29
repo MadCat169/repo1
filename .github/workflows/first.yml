@@ -10,7 +10,7 @@ jobs:
       run : echo "Hello SR"
 
       -name: List files
-       run: ls
+      run : ls
 
       -name: Read file
       run: cat README.md 
