@@ -1,10 +1,9 @@
 name: My workflow
 
 on:
-  push
+  push:
 
 jobs:
-
   ascii_job:
     runs-on: ubuntu-latest
 
@@ -12,10 +11,11 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: list repo
+      - name: List repo
         run: ls -ltra
+
+      - name: Make script executable
+        run: chmod +x ascii.sh
 
       - name: Execute shell script
         run: ./ascii.sh
-
-      
