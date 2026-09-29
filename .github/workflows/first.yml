@@ -1,27 +1,40 @@
 name: My workflow
 
-on: push
+on:
+  push:
 
 jobs:
-   first_job:
+  first_job:
     runs-on: ubuntu-latest
-  
+
     steps:
-
       - name: Checkout
-        uses: actions/checkout@v7
-        
+        uses: actions/checkout@v4
+
       - name: Welcome message
-        run : |
-              echo "Hello SR"
-              ls -ltra
-              cat README.md
+        run: |
+          echo "Hello SR"
+          ls -ltra
+          cat README.md
 
-      - name: Gen ASCII content
-        run: cowsay -f dragon "Run for cover" >> dragon.txt
+  ascii_job:
+    runs-on: ubuntu-latest
 
-   #   - name: List files
-      #  run : ls
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-   #   - name: Read file
-       # run: cat README.md 
+      - name: Install Cowsay Program
+        run: sudo apt-get install cowsay -y
+
+      - name: Execute Cowsay CMD
+        run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+
+      - name: Test File Exists
+        run: grep -i "dragon" dragon.txt
+
+      - name: Read File
+        run: cat dragon.txt
+
+      - name: Checkout Repo Files
+        run: ls
