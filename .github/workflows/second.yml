@@ -1,4 +1,4 @@
-name: Storing Workflow Data as Artifacts Demo
+name: Storing Workflow Data as Artifacts Demo 1
 
 on:
   push:
