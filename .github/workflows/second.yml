@@ -33,7 +33,7 @@ jobs:
 
   deploy_job_3:
     runs-on: ubuntu-latest
-    needs: [test_job_2]
+    needs: test_job_2
     steps:
       - name: Read File
         run: cat dragon.txt
