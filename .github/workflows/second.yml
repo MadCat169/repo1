@@ -1,9 +1,8 @@
 name: Storing Workflow Data as Artifacts Demo 1
 
 on:
-  schedule:
-    - cron: "*/1 * * * *"
-
+  workflow_dispatch: 
+  
 jobs:
 
   build_job_1:
