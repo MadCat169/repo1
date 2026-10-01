@@ -1,8 +1,8 @@
 name: My workflow
 
 on:
-  push:
-
+  workflow_dispatch:
+    
 jobs:
   ascii_job:
     runs-on: ubuntu-latest
