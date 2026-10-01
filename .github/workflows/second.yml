@@ -52,6 +52,7 @@ jobs:
         run: cat dragon.txt
 
       - name: Deploy
+        timeout-minutes: 1
         run: |
           echo "Deploying....."
           sleep 600s
