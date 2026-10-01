@@ -1,0 +1,34 @@
+name: Workflow Events Demo
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "*/59 * * * *"
+
+  push:
+    branches-ignore:
+      - "feature/**"
+      - "test/**"
+
+    branches:
+      - main
+
+  pull_request:
+    types:
+      - opened
+      - closed
+
+    paths-ignore:
+      - README.md
+
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show Event Type
+        run: echo "This workflow/job/step is executed for event type - ${{ github.event_name }}"
